@@ -21,60 +21,60 @@ import javax.swing.JOptionPane;
 <span class="nc" id="L21">public class Reservation_Operations {</span>
 
     public static void insert_reservation(int PH_ID, int CU_ID, String Product_Name, int Quantity) {
-<span class="nc" id="L24">        LocalDate currentDate = LocalDate.now();</span>
-<span class="nc" id="L25">        String query = &quot;insert into reservation(pharmacist_ID ,Customer_ID ,Product_Name ,Quantity,Reservation_date) values('&quot; + PH_ID + &quot;','&quot; + CU_ID + &quot;','&quot; + Product_Name + &quot;','&quot; + Quantity + &quot;','&quot; + currentDate.toString() + &quot;')&quot;;</span>
-<span class="nc" id="L26">        DBOperation.setDataOrDelete(query, &quot;New reservation has been Added Successfully&quot;);</span>
+<span class="fc" id="L24">        LocalDate currentDate = LocalDate.now();</span>
+<span class="fc" id="L25">        String query = &quot;insert into reservation(pharmacist_ID ,Customer_ID ,Product_Name ,Quantity,Reservation_date) values('&quot; + PH_ID + &quot;','&quot; + CU_ID + &quot;','&quot; + Product_Name + &quot;','&quot; + Quantity + &quot;','&quot; + currentDate.toString() + &quot;')&quot;;</span>
+<span class="fc" id="L26">        DBOperation.setDataOrDelete(query, &quot;New reservation has been Added Successfully&quot;);</span>
 
-<span class="nc" id="L28">    }</span>
+<span class="fc" id="L28">    }</span>
     public  static ArrayList&lt;Reservation_Model&gt; get_ReservationData()
     {
-<span class="nc" id="L31">          String query=&quot;select * from reservation&quot;;</span>
-<span class="nc" id="L32">          ResultSet Res=DBOperation.getData(query);</span>
-<span class="nc" id="L33">          ArrayList&lt;Reservation_Model&gt; arr= new ArrayList();</span>
+<span class="fc" id="L31">          String query=&quot;select * from reservation&quot;;</span>
+<span class="fc" id="L32">          ResultSet Res=DBOperation.getData(query);</span>
+<span class="fc" id="L33">          ArrayList&lt;Reservation_Model&gt; arr= new ArrayList();</span>
 
         try {
-<span class="nc bnc" id="L36" title="All 2 branches missed.">            while(Res.next())</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            while(Res.next())</span>
             {
-<span class="nc" id="L38">                arr.add(new Reservation_Model(Res.getInt(&quot;pharmacist_ID&quot;),Res.getInt(&quot;Customer_ID&quot;),Res.getInt(&quot;Quantity&quot;),Res.getString(&quot;Product_Name&quot;),Res.getString(&quot;Reservation_date&quot;)));</span>
+<span class="fc" id="L38">                arr.add(new Reservation_Model(Res.getInt(&quot;pharmacist_ID&quot;),Res.getInt(&quot;Customer_ID&quot;),Res.getInt(&quot;Quantity&quot;),Res.getString(&quot;Product_Name&quot;),Res.getString(&quot;Reservation_date&quot;)));</span>
             }
-<span class="nc" id="L40">            return arr;</span>
+<span class="fc" id="L40">            return arr;</span>
 <span class="nc" id="L41">        } catch (SQLException ex) {</span>
 <span class="nc" id="L42">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
         }
         finally{
 <span class="nc" id="L45">            try {</span>
-<span class="nc" id="L46">                Res.close();</span>
+<span class="pc" id="L46">                Res.close();</span>
 <span class="nc" id="L47">            } catch (SQLException ex) {</span>
 <span class="nc" id="L48">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L49">            }</span>
+<span class="pc" id="L49">            }</span>
 <span class="nc" id="L50">        }</span>
 <span class="nc" id="L51">       return null;</span>
         
     }
        public static ArrayList&lt;Reservation_Model&gt; Search_Reservation(int PH_ID)
     {   
-<span class="nc" id="L56">       ArrayList&lt;Reservation_Model&gt; arr= new ArrayList();</span>
-<span class="nc" id="L57">        String Query=&quot;select * from reservation where pharmacist_ID ='&quot;+PH_ID+&quot;' &quot;;</span>
-<span class="nc" id="L58">        ResultSet Res=DBOperation.getData(Query);</span>
+<span class="fc" id="L56">       ArrayList&lt;Reservation_Model&gt; arr= new ArrayList();</span>
+<span class="fc" id="L57">        String Query=&quot;select * from reservation where pharmacist_ID ='&quot;+PH_ID+&quot;' &quot;;</span>
+<span class="fc" id="L58">        ResultSet Res=DBOperation.getData(Query);</span>
         try {
-<span class="nc bnc" id="L60" title="All 2 branches missed.">            while(Res.next())</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">            while(Res.next())</span>
             {
 <span class="nc" id="L62">            arr.add(new Reservation_Model(Res.getInt(&quot;pharmacist_ID&quot;),Res.getInt(&quot;Customer_ID &quot;),Res.getInt(&quot;Quantity&quot;),Res.getString(&quot;Product_Name&quot;),Res.getString(&quot;Reservation_date&quot;)));}       </span>
 <span class="nc" id="L63">        } catch (SQLException ex) {</span>
 <span class="nc" id="L64">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
 <span class="nc" id="L65">         arr=null;</span>
-<span class="nc" id="L66">        }</span>
-<span class="nc" id="L67">         return arr;    </span>
+<span class="fc" id="L66">        }</span>
+<span class="fc" id="L67">         return arr;    </span>
     }
         public static void Delete_Reservation(int PH_ID,int CU_ID,String productName)
     {
-<span class="nc" id="L71">        String Query=&quot;delete from reservation where pharmacist_ID ='&quot;+PH_ID+&quot;' And Customer_ID ='&quot;+CU_ID+&quot;' AND Product_Name ='&quot;+productName+&quot;'&quot;;</span>
-<span class="nc" id="L72">        DBOperation.setDataOrDelete(Query, &quot; Reservation has been Deleted Successfully &quot;);</span>
-<span class="nc" id="L73">    }</span>
+<span class="fc" id="L71">        String Query=&quot;delete from reservation where pharmacist_ID ='&quot;+PH_ID+&quot;' And Customer_ID ='&quot;+CU_ID+&quot;' AND Product_Name ='&quot;+productName+&quot;'&quot;;</span>
+<span class="fc" id="L72">        DBOperation.setDataOrDelete(Query, &quot; Reservation has been Deleted Successfully &quot;);</span>
+<span class="fc" id="L73">    }</span>
         public static void Edit_Reservation(int PH_ID,int CU_ID,String productName,int quantity)
     {        
-<span class="nc" id="L76">        String query=&quot;UPDATE reservation set quantity='&quot;+quantity+&quot;' where pharmacist_ID ='&quot;+PH_ID+&quot;' AND Customer_ID='&quot;+CU_ID+&quot;' AND Product_Name ='&quot;+productName+&quot;'&quot;;</span>
-<span class="nc" id="L77">        DBOperation.setDataOrDelete(query, &quot;Edited Seccussfully&quot;);</span>
-<span class="nc" id="L78">    }</span>
+<span class="fc" id="L76">        String query=&quot;UPDATE reservation set quantity='&quot;+quantity+&quot;' where pharmacist_ID ='&quot;+PH_ID+&quot;' AND Customer_ID='&quot;+CU_ID+&quot;' AND Product_Name ='&quot;+productName+&quot;'&quot;;</span>
+<span class="fc" id="L77">        DBOperation.setDataOrDelete(query, &quot;Edited Seccussfully&quot;);</span>
+<span class="fc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

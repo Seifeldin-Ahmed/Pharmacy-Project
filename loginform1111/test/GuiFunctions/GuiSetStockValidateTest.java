@@ -79,7 +79,31 @@ public class GuiSetStockValidateTest {
         boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
         assertEquals(expResult, result);
     }
-
+    @Test
+    public void testSetStock4_validateFields() {
+         System.out.println("not Empty fields");
+        String prod_name = "alvantern";
+        String pri = "70";
+        String quan = "50";
+        String ex_date = "";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock5_validateFields() {
+         System.out.println("not Empty fields");
+        String prod_name = "alvantern";
+        String pri = "";
+        String quan = "";
+        String ex_date = "";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+   
     @Test
     public void testVaildate_ExpiredDate() {
         System.out.println("vaildate_ExpiredDate");
@@ -102,6 +126,50 @@ public class GuiSetStockValidateTest {
       
     }
     @Test
+    public void testVaildate_ExpiredDate3() {
+        System.out.println("vaildate_ExpiredDate");
+        Products_Model old_product =new Products_Model ("move", 70,"1/5/2020",202,"Other","hh"); 
+        Products_Model new_product =new Products_Model ("move", 70,"1/8/2020",202,"Other","hh"); 
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = true;
+        boolean result = instance.vaildate_ExpiredDate(old_product,new_product);
+        assertEquals(expResult, result);
+      
+    }
+    @Test
+    public void testVaildate_ExpiredDate4() {
+        System.out.println("vaildate_ExpiredDate");
+        Products_Model old_product =new Products_Model ("move", 70,"1/8/2020",202,"Other","hh"); 
+        Products_Model new_product =new Products_Model ("move", 70,"1/5/2020",202,"Other","hh"); 
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.vaildate_ExpiredDate(old_product,new_product);
+        assertEquals(expResult, result);
+      
+    }
+    @Test
+    public void testVaildate_ExpiredDate5() {
+        System.out.println("vaildate_ExpiredDate");
+        Products_Model old_product =new Products_Model ("move", 70,"1/8/2020",202,"Other","hh"); 
+        Products_Model new_product =new Products_Model ("move", 70,"15/8/2020",202,"Other","hh"); 
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = true;
+        boolean result = instance.vaildate_ExpiredDate(old_product,new_product);
+        assertEquals(expResult, result);
+      
+    }
+    @Test
+    public void testVaildate_ExpiredDate6() {
+        System.out.println("vaildate_ExpiredDate");
+        Products_Model old_product =new Products_Model ("move", 70,"15/8/2020",202,"Other","hh"); 
+        Products_Model new_product =new Products_Model ("move", 70,"1/8/2020",202,"Other","hh"); 
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.vaildate_ExpiredDate(old_product,new_product);
+        assertEquals(expResult, result);
+      
+    }
+    @Test
     public void testIsExpired() {
         System.out.println("IsnotExpired");
         Products_Model product =new Products_Model ("move", 70,"1/8/2030",202,"Other","hh"); 
@@ -116,6 +184,46 @@ public class GuiSetStockValidateTest {
     public void testIsExpired2() {
         System.out.println("IsExpired");
         Products_Model product =new Products_Model ("move", 70,"1/8/2022",202,"Other","hh"); 
+       // Products_Model Product = null;
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = true;
+        boolean result = instance.IsExpired(product);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testIsExpired3() {
+        System.out.println("IsExpired");
+        Products_Model product =new Products_Model ("move", 70,"1/8/2023",202,"Other","hh"); 
+       // Products_Model Product = null;
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.IsExpired(product);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testIsExpired4() {
+        System.out.println("IsExpired");
+        Products_Model product =new Products_Model ("move", 70,"1/1/2023",202,"Other","hh"); 
+       // Products_Model Product = null;
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = true;
+        boolean result = instance.IsExpired(product);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testIsExpired5() {
+        System.out.println("IsExpired");
+        Products_Model product =new Products_Model ("move", 70,"30/6/2023",202,"Other","hh"); 
+       // Products_Model Product = null;
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.IsExpired(product);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testIsExpired6() {
+        System.out.println("IsExpired");
+        Products_Model product =new Products_Model ("move", 70,"1/6/2023",202,"Other","hh"); 
        // Products_Model Product = null;
         GuiSetStockValidate instance = new GuiSetStockValidate();
         boolean expResult = true;

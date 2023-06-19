@@ -56,7 +56,7 @@ import javax.swing.JOptionPane;
 <span class="pc" id="L56">                  throw new SQLException(&quot;check not right&quot;);</span>
 <span class="pc" id="L57">            } catch (SQLException ex) {</span>
 <span class="pc" id="L58">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L59">            }</span>
+            }
 <span class="nc" id="L60">        }</span>
 <span class="nc" id="L61">       return null;  </span>
     }
@@ -179,19 +179,19 @@ import javax.swing.JOptionPane;
 <span class="fc" id="L179">        ResultSet rs=DBOperation.getData(Query);</span>
 <span class="fc" id="L180">        ArrayList&lt;Object&gt; arr= new ArrayList();</span>
         try {
-<span class="fc bfc" id="L182" title="All 2 branches covered.">            if(!rs.isBeforeFirst())</span>
+<span class="pc bpc" id="L182" title="1 of 2 branches missed.">            if(!rs.isBeforeFirst())</span>
             {
 <span class="fc" id="L184">                return null;</span>
             }
-<span class="fc bfc" id="L186" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">            while(rs.next())</span>
             {
-<span class="fc" id="L188">                arr.add(new Suppliers_Model(rs.getString(&quot;Company_name&quot;),</span>
-<span class="fc" id="L189">                      rs.getString(&quot;city&quot;),</span>
-<span class="fc" id="L190">                        rs.getString(&quot;region&quot;),</span>
-<span class="fc" id="L191">                        rs.getString(&quot;postal_code&quot;),</span>
-<span class="fc" id="L192">                      rs.getString(&quot;phone&quot;)));</span>
+<span class="nc" id="L188">                arr.add(new Suppliers_Model(rs.getString(&quot;Company_name&quot;),</span>
+<span class="nc" id="L189">                      rs.getString(&quot;city&quot;),</span>
+<span class="nc" id="L190">                        rs.getString(&quot;region&quot;),</span>
+<span class="nc" id="L191">                        rs.getString(&quot;postal_code&quot;),</span>
+<span class="nc" id="L192">                      rs.getString(&quot;phone&quot;)));</span>
             }   
-<span class="fc" id="L194">            return arr;</span>
+<span class="nc" id="L194">            return arr;</span>
 <span class="nc" id="L195">        } catch (SQLException ex) {</span>
 <span class="nc" id="L196">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
         }
