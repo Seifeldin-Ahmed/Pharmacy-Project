@@ -14,32 +14,32 @@ DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd HH:mm:ss&qu
 
     public static void setDataOrDelete(String Query, String msg) {
 
-<span class="fc" id="L17">        Connector c1 = new Connector();</span>
+<span class="nc" id="L17">        Connector c1 = new Connector();</span>
         try {
 
-<span class="fc" id="L20">            con = c1.connect();</span>
+<span class="nc" id="L20">            con = c1.connect();</span>
 
-<span class="fc" id="L22">            st = con.createStatement();</span>
-<span class="fc" id="L23">            st.executeUpdate(Query); // same as st.execute(Query);</span>
+<span class="nc" id="L22">            st = con.createStatement();</span>
+<span class="nc" id="L23">            st.executeUpdate(Query); // same as st.execute(Query);</span>
 
-<span class="fc bfc" id="L25" title="All 2 branches covered.">            if (!msg.equals(&quot;&quot;)) {</span>
-<span class="fc" id="L26">                JOptionPane.showMessageDialog(null, msg);</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">            if (!msg.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L26">                JOptionPane.showMessageDialog(null, msg);</span>
             }
 <span class="nc" id="L28">        } catch (SQLException e) {</span>
 <span class="nc" id="L29">            JOptionPane.showMessageDialog(null, e, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="fc" id="L30">        } </span>
-<span class="fc" id="L31">    }</span>
+<span class="nc" id="L30">        } </span>
+<span class="nc" id="L31">    }</span>
 
     public static ResultSet getData(String query) {
-<span class="fc" id="L34">        Connector c2 = new Connector();</span>
+<span class="nc" id="L34">        Connector c2 = new Connector();</span>
         try {
-<span class="fc" id="L36">            con = c2.connect();</span>
-<span class="fc" id="L37">            st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);</span>
-<span class="fc" id="L38">            ResultSet rs = st.executeQuery(query);</span>
-<span class="fc" id="L39">            return rs;</span>
-<span class="fc" id="L40">        } catch (SQLException e) {</span>
-<span class="fc" id="L41">            JOptionPane.showMessageDialog(null, e, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="fc" id="L42">            return null;</span>
+<span class="nc" id="L36">            con = c2.connect();</span>
+<span class="nc" id="L37">            st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);</span>
+<span class="nc" id="L38">            ResultSet rs = st.executeQuery(query);</span>
+<span class="nc" id="L39">            return rs;</span>
+<span class="nc" id="L40">        } catch (SQLException e) {</span>
+<span class="nc" id="L41">            JOptionPane.showMessageDialog(null, e, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L42">            return null;</span>
         } 
     }
 }

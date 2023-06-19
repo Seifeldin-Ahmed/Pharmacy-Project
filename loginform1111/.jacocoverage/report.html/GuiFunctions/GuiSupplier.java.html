@@ -116,7 +116,7 @@ import loginform.products;
                /*                         search pharamcist                           */
 <span class="fc" id="L117">               int pharmacist_id =Integer.parseInt(phar_id);</span>
 <span class="fc" id="L118">             Pharmacist_Model pharmacist_op = Pharmacist_operations.Search_Pharmacist(pharmacist_id);</span>
-<span class="fc bfc" id="L119" title="All 2 branches covered.">             if ( pharmacist_op == null)</span>
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">             if ( pharmacist_op == null)</span>
              {
 <span class="fc" id="L121">                 flag=4;</span>
 <span class="fc" id="L122">                JOptionPane.showMessageDialog(null, &quot;There's No Pharmacist with This ID&quot;, &quot;Message&quot;, JOptionPane.WARNING_MESSAGE);</span>
@@ -125,35 +125,35 @@ import loginform.products;
              else
              {
                  /*                             search supplier and product                        */
-<span class="fc" id="L128">               int supplier_id=Integer.parseInt(company_id);</span>
-<span class="fc" id="L129">               ArrayList&lt;Object&gt; supplier_op = supplier_operations.SearchToCheck(supplier_id);</span>
-<span class="fc" id="L130">               String med_name=prod_name;</span>
-<span class="fc" id="L131">               Products_Model prod_op=Products_Operations.Search_Product(med_name);</span>
-<span class="fc bfc" id="L132" title="All 2 branches covered.">                if( supplier_op == null) // supplier not exist </span>
+<span class="nc" id="L128">               int supplier_id=Integer.parseInt(company_id);</span>
+<span class="nc" id="L129">               ArrayList&lt;Object&gt; supplier_op = supplier_operations.SearchToCheck(supplier_id);</span>
+<span class="nc" id="L130">               String med_name=prod_name;</span>
+<span class="nc" id="L131">               Products_Model prod_op=Products_Operations.Search_Product(med_name);</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">                if( supplier_op == null) // supplier not exist </span>
                {
-<span class="fc" id="L134">                    flag=5;</span>
-<span class="fc" id="L135">                   supplier_operations.insert_SupplierData(Integer.parseInt(company_id),Company_name, city, region, postal_code, tele);</span>
+<span class="nc" id="L134">                    flag=5;</span>
+<span class="nc" id="L135">                   supplier_operations.insert_SupplierData(Integer.parseInt(company_id),Company_name, city, region, postal_code, tele);</span>
                }
-<span class="fc bfc" id="L137" title="All 2 branches covered.">                if(prod_op == null) // product not exist</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">                if(prod_op == null) // product not exist</span>
                {
-<span class="fc" id="L139">                    flag=6;</span>
-<span class="fc" id="L140">                    Products_Operations.insert_ProductData(prod_name, Integer.parseInt(price), Expire_date, Integer.parseInt(quantity), categ, desc);</span>
+<span class="nc" id="L139">                    flag=6;</span>
+<span class="nc" id="L140">                    Products_Operations.insert_ProductData(prod_name, Integer.parseInt(price), Expire_date, Integer.parseInt(quantity), categ, desc);</span>
                }
                else 
                {
-<span class="fc" id="L144">                   int StoredQuantity=prod_op.getQuantity();</span>
-<span class="fc" id="L145">                   int Quantity= StoredQuantity+ Integer.parseInt(quantity);</span>
-<span class="fc" id="L146">                   Products_Operations.Edit_Product(prod_name,  Integer.parseInt(price), Expire_date, Quantity );</span>
+<span class="nc" id="L144">                   int StoredQuantity=prod_op.getQuantity();</span>
+<span class="nc" id="L145">                   int Quantity= StoredQuantity+ Integer.parseInt(quantity);</span>
+<span class="nc" id="L146">                   Products_Operations.Edit_Product(prod_name,  Integer.parseInt(price), Expire_date, Quantity );</span>
                }
                
-<span class="fc" id="L149">                supplier_operations.insertSupplier_prod_rel(prod_name,Integer.parseInt(company_id),Integer.parseInt(phar_id),Date);</span>
-<span class="fc" id="L150">                products obj = new products();</span>
-<span class="fc" id="L151">                obj.show_table();</span>
-<span class="fc" id="L152">                Supplier ob= new Supplier();</span>
-<span class="fc" id="L153">                ob.setVisible(true);</span>
-<span class="fc" id="L154">                ob.show_table();</span>
-<span class="fc" id="L155">                newproduct prod=new newproduct();</span>
-<span class="fc" id="L156">                prod.dispose();</span>
+<span class="nc" id="L149">                supplier_operations.insertSupplier_prod_rel(prod_name,Integer.parseInt(company_id),Integer.parseInt(phar_id),Date);</span>
+<span class="nc" id="L150">                products obj = new products();</span>
+<span class="nc" id="L151">                obj.show_table();</span>
+<span class="nc" id="L152">                Supplier ob= new Supplier();</span>
+<span class="nc" id="L153">                ob.setVisible(true);</span>
+<span class="nc" id="L154">                ob.show_table();</span>
+<span class="nc" id="L155">                newproduct prod=new newproduct();</span>
+<span class="nc" id="L156">                prod.dispose();</span>
                }
 <span class="fc" id="L158">             }</span>
              

@@ -22,23 +22,23 @@ public class Suppliers_Model {
     private String date;
     private int supplier_id;
 
-<span class="fc" id="L25">    public Suppliers_Model( int supplier_id, String Company_name, String city, String region, String postal_code, String phone) {</span>
-<span class="fc" id="L26">        this.supplier_id = supplier_id;</span>
-<span class="fc" id="L27">        this.Company_name = Company_name;</span>
-<span class="fc" id="L28">        this.city = city;</span>
-<span class="fc" id="L29">        this.region = region;</span>
-<span class="fc" id="L30">        this.postal_code = postal_code;</span>
-<span class="fc" id="L31">        this.phone = phone;</span>
+<span class="nc" id="L25">    public Suppliers_Model( int supplier_id, String Company_name, String city, String region, String postal_code, String phone) {</span>
+<span class="nc" id="L26">        this.supplier_id = supplier_id;</span>
+<span class="nc" id="L27">        this.Company_name = Company_name;</span>
+<span class="nc" id="L28">        this.city = city;</span>
+<span class="nc" id="L29">        this.region = region;</span>
+<span class="nc" id="L30">        this.postal_code = postal_code;</span>
+<span class="nc" id="L31">        this.phone = phone;</span>
         
-<span class="fc" id="L33">    }</span>
+<span class="nc" id="L33">    }</span>
     public Suppliers_Model(String Company_name, String city, String region, String postal_code, String phone)
-<span class="fc" id="L35">    {</span>
-<span class="fc" id="L36">        this.Company_name = Company_name;</span>
-<span class="fc" id="L37">        this.city = city;</span>
-<span class="fc" id="L38">        this.region = region;</span>
-<span class="fc" id="L39">        this.postal_code = postal_code;</span>
-<span class="fc" id="L40">        this.phone = phone;</span>
-<span class="fc" id="L41">    }</span>
+<span class="nc" id="L35">    {</span>
+<span class="nc" id="L36">        this.Company_name = Company_name;</span>
+<span class="nc" id="L37">        this.city = city;</span>
+<span class="nc" id="L38">        this.region = region;</span>
+<span class="nc" id="L39">        this.postal_code = postal_code;</span>
+<span class="nc" id="L40">        this.phone = phone;</span>
+<span class="nc" id="L41">    }</span>
     public Suppliers_Model(String Company_name, String med_name)
 <span class="nc" id="L43">    {</span>
 <span class="nc" id="L44">        Products_Model p=new Products_Model(med_name);</span>
@@ -47,17 +47,17 @@ public class Suppliers_Model {
         
 <span class="nc" id="L48">    }</span>
     public Suppliers_Model(int Company_id,String Company_name)
-<span class="fc" id="L50">    {</span>
-<span class="fc" id="L51">        this.supplier_id=Company_id;</span>
-<span class="fc" id="L52">        this.Company_name = Company_name;</span>
-<span class="fc" id="L53">    }</span>
+<span class="nc" id="L50">    {</span>
+<span class="nc" id="L51">        this.supplier_id=Company_id;</span>
+<span class="nc" id="L52">        this.Company_name = Company_name;</span>
+<span class="nc" id="L53">    }</span>
     public Suppliers_Model()
 <span class="nc" id="L55">    {</span>
         
 <span class="nc" id="L57">    }</span>
 
     public String getCompany_name() {
-<span class="fc" id="L60">        return Company_name;</span>
+<span class="nc" id="L60">        return Company_name;</span>
     }
     public String getMed_name()
     {
@@ -71,7 +71,7 @@ public class Suppliers_Model {
 <span class="nc" id="L71">    }</span>
 
     public String getCity() {
-<span class="fc" id="L74">        return city;</span>
+<span class="nc" id="L74">        return city;</span>
     }
 
     public void setCity(String city) {
@@ -79,7 +79,7 @@ public class Suppliers_Model {
 <span class="nc" id="L79">    }</span>
 
     public String getRegion() {
-<span class="fc" id="L82">        return region;</span>
+<span class="nc" id="L82">        return region;</span>
     }
 
     public void setRegion(String region) {
@@ -87,7 +87,7 @@ public class Suppliers_Model {
 <span class="nc" id="L87">    }</span>
 
     public String getPostal_code() {
-<span class="fc" id="L90">        return postal_code;</span>
+<span class="nc" id="L90">        return postal_code;</span>
     }
 
     public void setPostal_code(String postal_code) {
@@ -95,7 +95,7 @@ public class Suppliers_Model {
 <span class="nc" id="L95">    }</span>
 
     public String getPhone() {
-<span class="fc" id="L98">        return phone;</span>
+<span class="nc" id="L98">        return phone;</span>
     }
 
     public void setPhone(String phone) {
@@ -103,7 +103,7 @@ public class Suppliers_Model {
 <span class="nc" id="L103">    }</span>
 
     public int getSupplier_id() {
-<span class="fc" id="L106">        return supplier_id;</span>
+<span class="nc" id="L106">        return supplier_id;</span>
     }
 
     public void setSupplier_id(int supplier_id) {

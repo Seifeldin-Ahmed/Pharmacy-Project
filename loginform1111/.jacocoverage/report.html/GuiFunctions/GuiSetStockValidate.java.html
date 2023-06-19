@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GuiSetStockValidate.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;loginform&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">GuiFunctions</a> &gt; <span class="el_source">GuiSetStockValidate.java</span></div><h1>GuiSetStockValidate.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GuiFunctions;
+
+import Control.Products_Operations;
+import Modeling.Products_Model;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+import loginform.products;
+import Control.Products_Operations;
+import Modeling.Products_Model;
+
+/**
+ *
+ * @author lenovo
+ */
+<span class="fc" id="L22">public class GuiSetStockValidate {</span>
+
+<span class="fc" id="L24">    public String DatePattern = &quot;^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$&quot;;</span>
+
+    public boolean SetStock_validateFields(String prod_name, String pri, String quan, String ex_date) {
+<span class="fc" id="L27">        String med_name = prod_name;</span>
+<span class="fc" id="L28">        String price = pri;</span>
+<span class="fc" id="L29">        String quantity = quan;</span>
+<span class="fc" id="L30">        String expired_date = ex_date;</span>
+<span class="pc bpc" id="L31" title="3 of 8 branches missed.">        return !expired_date.equals(&quot;&quot;) &amp;&amp; !quantity.equals(&quot;&quot;) &amp;&amp; !price.equals(&quot;&quot;) &amp;&amp; !med_name.equals(&quot;&quot;);</span>
+    }
+
+    public boolean vaildate_ExpiredDate(Products_Model old_Product, Products_Model new_Product) {
+<span class="fc" id="L35">        boolean vaild = false;</span>
+<span class="fc" id="L36">        String old_date = old_Product.getExpired_date();</span>
+<span class="fc" id="L37">        String new_date = new_Product.getExpired_date();</span>
+<span class="fc" id="L38">        StringTokenizer old = new StringTokenizer(old_date, &quot;/&quot;);</span>
+<span class="fc" id="L39">        StringTokenizer New = new StringTokenizer(new_date, &quot;/&quot;);</span>
+<span class="fc" id="L40">        int DayOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L41">        int MonthOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L42">        int YearOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L43">        int DayNew = Integer.parseInt(New.nextToken());</span>
+<span class="fc" id="L44">        int MonthNew = Integer.parseInt(New.nextToken());</span>
+<span class="fc" id="L45">        int YearNew = Integer.parseInt(New.nextToken());</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (YearNew &gt; YearOld) // Expired</span>
+        {
+<span class="fc" id="L48">            vaild = true;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        } else if (YearNew == YearOld) {</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            if (MonthNew &gt; MonthOld) {</span>
+<span class="fc" id="L51">                vaild = true;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            } else if (MonthNew == MonthOld) {</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">                if (DayNew &gt;= DayOld) {</span>
+<span class="fc" id="L54">                    vaild = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L58">        return vaild;</span>
+    }
+
+    public boolean IsExpired(Products_Model Product) {
+<span class="fc" id="L62">        boolean expired = false;</span>
+<span class="fc" id="L63">        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd&quot;);</span>
+<span class="fc" id="L64">        LocalDateTime now = LocalDateTime.now();</span>
+<span class="fc" id="L65">        String old_date = Product.getExpired_date();</span>
+<span class="fc" id="L66">        StringTokenizer old = new StringTokenizer(old_date, &quot;/&quot;);</span>
+<span class="fc" id="L67">        StringTokenizer Now = new StringTokenizer(dtf.format(now), &quot;/&quot;);</span>
+<span class="fc" id="L68">        int DayOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L69">        int MonthOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L70">        int YearOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L71">        int YearNow = Integer.parseInt(Now.nextToken());</span>
+<span class="fc" id="L72">        int MonthNow = Integer.parseInt(Now.nextToken());</span>
+<span class="fc" id="L73">        int DayNow = Integer.parseInt(Now.nextToken());</span>
+
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (YearNow &gt; YearOld) // Expired</span>
+        {
+<span class="fc" id="L77">            expired = true;</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        } else if (YearNow == YearOld) {</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            if (MonthNow &gt; MonthOld) {</span>
+<span class="fc" id="L80">                expired = true;</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            } else if (MonthNow == MonthOld) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">                if (DayNow &gt;= DayOld) {</span>
+<span class="fc" id="L83">                    expired = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L87">        return expired;</span>
+    }
+
+    public boolean EditStock(String productName, int new_quantity, String date) {
+
+        int Price, last_quantity;
+        String NewExpiredDate;
+<span class="fc" id="L94">        Products_Model obj = Products_Operations.Search_Product(productName);</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (obj == null) {</span>
+<span class="fc" id="L96">            return false;</span>
+        }
+<span class="fc" id="L98">        Price = obj.getPrice();</span>
+        /*-----FOR QUANTITY------*/
+        
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        if (IsExpired(obj)) {</span>
+<span class="fc" id="L102">            last_quantity = 0;</span>
+        } else {
+<span class="fc" id="L104">            last_quantity = Products_Operations.Search_Product(productName).getQuantity();</span>
+        }
+<span class="fc" id="L106">        int total_quantity = new_quantity + last_quantity;</span>
+        /*-----FOR Expired Date------*/
+<span class="fc bfc" id="L108" title="All 2 branches covered.">        if (vaildate_ExpiredDate(obj, date)) {</span>
+<span class="fc" id="L109">            NewExpiredDate = date;</span>
+        } else {
+<span class="fc" id="L111">            NewExpiredDate = obj.getExpired_date();</span>
+        }
+<span class="fc" id="L113">        Products_Operations.Edit_Product(productName, Price, NewExpiredDate, total_quantity);</span>
+        /*-----------------------------------*/
+
+<span class="fc" id="L116">        JOptionPane.showMessageDialog(null, &quot;Data is updated&quot;, &quot;Message&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="fc" id="L117">        return true;</span>
+    }
+
+    public boolean vaildate_ExpiredDate(Products_Model old_Product, String newDate) {
+<span class="fc" id="L121">        boolean vaild = false;</span>
+<span class="fc" id="L122">        String old_date = old_Product.getExpired_date();</span>
+<span class="fc" id="L123">        StringTokenizer old = new StringTokenizer(old_date, &quot;/&quot;);</span>
+<span class="fc" id="L124">        StringTokenizer New = new StringTokenizer(newDate, &quot;/&quot;);</span>
+<span class="fc" id="L125">        int DayOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L126">        int MonthOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L127">        int YearOld = Integer.parseInt(old.nextToken());</span>
+<span class="fc" id="L128">        int DayNew = Integer.parseInt(New.nextToken());</span>
+<span class="fc" id="L129">        int MonthNew = Integer.parseInt(New.nextToken());</span>
+<span class="fc" id="L130">        int YearNew = Integer.parseInt(New.nextToken());</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">        if (YearNew &gt; YearOld) // Expired</span>
+        {
+<span class="fc" id="L133">            vaild = true;</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">        } else if (YearNew == YearOld) {</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">            if (MonthNew &gt; MonthOld) {</span>
+<span class="fc" id="L136">                vaild = true;</span>
+<span class="pc bpc" id="L137" title="1 of 2 branches missed.">            } else if (MonthNew == MonthOld) {</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">                if (DayNew &gt;= DayOld) {</span>
+<span class="fc" id="L139">                    vaild = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L143">        return vaild;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

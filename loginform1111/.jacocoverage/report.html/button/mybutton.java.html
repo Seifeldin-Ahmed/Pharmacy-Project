@@ -23,61 +23,61 @@ public final class mybutton extends JButton {
     }
 
     public void setColor(Color color) {
-<span class="fc" id="L26">        this.color = color;</span>
-<span class="fc" id="L27">        setBackground(color);</span>
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L26">        this.color = color;</span>
+<span class="nc" id="L27">        setBackground(color);</span>
+<span class="nc" id="L28">    }</span>
 
     public Color getColorOver() {
 <span class="nc" id="L31">        return colorOver;</span>
     }
 
     public void setColorOver(Color colorOver) {
-<span class="fc" id="L35">        this.colorOver = colorOver;</span>
-<span class="fc" id="L36">    }</span>
+<span class="nc" id="L35">        this.colorOver = colorOver;</span>
+<span class="nc" id="L36">    }</span>
 
     public Color getColorClick() {
 <span class="nc" id="L39">        return colorClick;</span>
     }
 
     public void setColorClick(Color colorClick) {
-<span class="fc" id="L43">        this.colorClick = colorClick;</span>
-<span class="fc" id="L44">    }</span>
+<span class="nc" id="L43">        this.colorClick = colorClick;</span>
+<span class="nc" id="L44">    }</span>
     
     public Color getColorText() {
 <span class="nc" id="L47">        return colorText;</span>
     }
 
     public void setColorText(Color colorText) {
-<span class="fc" id="L51">        this.colorText = colorText;</span>
-<span class="fc" id="L52">    }</span>
+<span class="nc" id="L51">        this.colorText = colorText;</span>
+<span class="nc" id="L52">    }</span>
 
     public Color getBorderColor() {
 <span class="nc" id="L55">        return borderColor;</span>
     }
 
     public void setBorderColor(Color borderColor) {
-<span class="fc" id="L59">        this.borderColor = borderColor;</span>
-<span class="fc" id="L60">    }</span>
+<span class="nc" id="L59">        this.borderColor = borderColor;</span>
+<span class="nc" id="L60">    }</span>
 
     public int getRadius() {
 <span class="nc" id="L63">        return radius;</span>
     }
 
     public void setRadius(int radius) {
-<span class="fc" id="L67">        this.radius = radius;</span>
-<span class="fc" id="L68">    }</span>
+<span class="nc" id="L67">        this.radius = radius;</span>
+<span class="nc" id="L68">    }</span>
 
-<span class="fc" id="L70">    public mybutton() {</span>
+<span class="nc" id="L70">    public mybutton() {</span>
         //  Init Color
 
-<span class="fc" id="L73">        setColor(Color.WHITE);</span>
-<span class="fc" id="L74">        colorOver = new Color(6,107,138);</span>
-<span class="fc" id="L75">        colorClick = new Color(152, 184, 144);</span>
-<span class="fc" id="L76">        borderColor = new Color(30, 136, 56);</span>
-<span class="fc" id="L77">        colorText = new Color(152, 184, 144);</span>
-<span class="fc" id="L78">        setContentAreaFilled(false);</span>
+<span class="nc" id="L73">        setColor(Color.WHITE);</span>
+<span class="nc" id="L74">        colorOver = new Color(6,107,138);</span>
+<span class="nc" id="L75">        colorClick = new Color(152, 184, 144);</span>
+<span class="nc" id="L76">        borderColor = new Color(30, 136, 56);</span>
+<span class="nc" id="L77">        colorText = new Color(152, 184, 144);</span>
+<span class="nc" id="L78">        setContentAreaFilled(false);</span>
         //  Add event mouse
-<span class="fc" id="L80">        addMouseListener(new MouseAdapter() {</span>
+<span class="nc" id="L80">        addMouseListener(new MouseAdapter() {</span>
             @Override
             public void mouseEntered(MouseEvent me) {
 <span class="nc" id="L83">                setBackground(colorOver);</span>
@@ -105,7 +105,7 @@ public final class mybutton extends JButton {
                 }
 <span class="nc" id="L106">            }</span>
         });
-<span class="fc" id="L108">    }</span>
+<span class="nc" id="L108">    }</span>
 
     private boolean over;
     private Color color;
@@ -113,27 +113,27 @@ public final class mybutton extends JButton {
     private Color colorText;
     private Color colorClick;
     private Color borderColor;
-<span class="fc" id="L116">    private int radius = 0;</span>
+<span class="nc" id="L116">    private int radius = 0;</span>
 
     @Override
     protected void paintComponent(Graphics grphcs) {
-<span class="fc" id="L120">        Graphics2D g2 = (Graphics2D) grphcs;</span>
-<span class="fc" id="L121">        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span>
+<span class="nc" id="L120">        Graphics2D g2 = (Graphics2D) grphcs;</span>
+<span class="nc" id="L121">        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span>
         //  Paint Border
-<span class="fc" id="L123">        g2.setColor(borderColor);</span>
-<span class="fc" id="L124">        g2.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);</span>
-<span class="fc" id="L125">        g2.setColor(getBackground());</span>
+<span class="nc" id="L123">        g2.setColor(borderColor);</span>
+<span class="nc" id="L124">        g2.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);</span>
+<span class="nc" id="L125">        g2.setColor(getBackground());</span>
         //  Border set 2 Pix
-<span class="fc" id="L127">        g2.fillRoundRect(2, 2, getWidth() - 4, getHeight() - 4, radius, radius);</span>
-<span class="fc" id="L128">        super.paintComponent(grphcs);</span>
-<span class="fc" id="L129">    }</span>
+<span class="nc" id="L127">        g2.fillRoundRect(2, 2, getWidth() - 4, getHeight() - 4, radius, radius);</span>
+<span class="nc" id="L128">        super.paintComponent(grphcs);</span>
+<span class="nc" id="L129">    }</span>
     @Override
    public void setEnabled(boolean b) {
-<span class="pc bpc" id="L132" title="2 of 4 branches missed.">        if (!b &amp;&amp; model.isRollover()) {</span>
+<span class="nc bnc" id="L132" title="All 4 branches missed.">        if (!b &amp;&amp; model.isRollover()) {</span>
 <span class="nc" id="L133">            model.setRollover(false);</span>
         }
-<span class="fc" id="L135">        super.setEnabled(b);</span>
-<span class="fc" id="L136">        model.setEnabled(b);</span>
-<span class="fc" id="L137">    }</span>
+<span class="nc" id="L135">        super.setEnabled(b);</span>
+<span class="nc" id="L136">        model.setEnabled(b);</span>
+<span class="nc" id="L137">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

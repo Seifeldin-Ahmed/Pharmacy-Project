@@ -19,24 +19,24 @@ public class TableDark extends JTable {
     private TableDarkHeader header;
     private TableDarkCell cell;
 
-<span class="fc" id="L22">    public TableDark() {</span>
+<span class="nc" id="L22">    public TableDark() {</span>
         
-<span class="fc" id="L24">        header = new TableDarkHeader();</span>
-<span class="fc" id="L25">        cell = new TableDarkCell();</span>
-<span class="fc" id="L26">        getTableHeader().setDefaultRenderer(header);</span>
-<span class="fc" id="L27">        getTableHeader().setPreferredSize(new Dimension(0, 35));</span>
-<span class="fc" id="L28">        setDefaultRenderer(Object.class, cell);</span>
-<span class="fc" id="L29">        setRowHeight(30);</span>
+<span class="nc" id="L24">        header = new TableDarkHeader();</span>
+<span class="nc" id="L25">        cell = new TableDarkCell();</span>
+<span class="nc" id="L26">        getTableHeader().setDefaultRenderer(header);</span>
+<span class="nc" id="L27">        getTableHeader().setPreferredSize(new Dimension(0, 35));</span>
+<span class="nc" id="L28">        setDefaultRenderer(Object.class, cell);</span>
+<span class="nc" id="L29">        setRowHeight(30);</span>
         
-<span class="fc" id="L31">    }</span>
+<span class="nc" id="L31">    }</span>
 
     public void setColumnAlignment(int column, int align) {
-<span class="fc" id="L34">        header.setAlignment(column, align);</span>
-<span class="fc" id="L35">    }</span>
+<span class="nc" id="L34">        header.setAlignment(column, align);</span>
+<span class="nc" id="L35">    }</span>
 
     public void setCellAlignment(int column, int align) {
-<span class="fc" id="L38">        cell.setAlignment(column, align);</span>
-<span class="fc" id="L39">    }</span>
+<span class="nc" id="L38">        cell.setAlignment(column, align);</span>
+<span class="nc" id="L39">    }</span>
 
     public void setColumnWidth(int column, int width) {
 <span class="nc" id="L42">        getColumnModel().getColumn(column).setPreferredWidth(width);</span>
@@ -47,69 +47,69 @@ public class TableDark extends JTable {
 <span class="nc" id="L47">    }</span>
 
     public void fixTable(JScrollPane scroll) {
-<span class="fc" id="L50">        scroll.setVerticalScrollBar(new ScrollBarCustom());</span>
-<span class="fc" id="L51">        JPanel panel = new JPanel();</span>
-<span class="fc" id="L52">        panel.setBackground(new Color(255, 255, 255));</span>
-<span class="fc" id="L53">        scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, panel);</span>
-<span class="fc" id="L54">        scroll.getViewport().setBackground(new Color(30, 30, 30));</span>
-<span class="fc" id="L55">        scroll.setBorder(BorderFactory.createLineBorder(new Color(255, 255, 255), 2));</span>
-<span class="fc" id="L56">    }</span>
+<span class="nc" id="L50">        scroll.setVerticalScrollBar(new ScrollBarCustom());</span>
+<span class="nc" id="L51">        JPanel panel = new JPanel();</span>
+<span class="nc" id="L52">        panel.setBackground(new Color(255, 255, 255));</span>
+<span class="nc" id="L53">        scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, panel);</span>
+<span class="nc" id="L54">        scroll.getViewport().setBackground(new Color(30, 30, 30));</span>
+<span class="nc" id="L55">        scroll.setBorder(BorderFactory.createLineBorder(new Color(255, 255, 255), 2));</span>
+<span class="nc" id="L56">    }</span>
 
-<span class="fc" id="L58">    private class TableDarkHeader extends DefaultTableCellRenderer {</span>
+<span class="nc" id="L58">    private class TableDarkHeader extends DefaultTableCellRenderer {</span>
 
-<span class="fc" id="L60">        private Map&lt;Integer, Integer&gt; alignment = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L60">        private Map&lt;Integer, Integer&gt; alignment = new HashMap&lt;&gt;();</span>
 
         public void setAlignment(int column, int align) {
-<span class="fc" id="L63">            alignment.put(column, align);</span>
-<span class="fc" id="L64">        }</span>
+<span class="nc" id="L63">            alignment.put(column, align);</span>
+<span class="nc" id="L64">        }</span>
 
         @Override
         public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
-<span class="fc" id="L68">            Component com = super.getTableCellRendererComponent(jtable, o, bln, bln1, i, i1);</span>
-<span class="fc" id="L69">            com.setBackground(new Color(255, 255, 255));</span>
-<span class="fc" id="L70">            com.setForeground(new Color(30,30, 30));</span>
-<span class="fc" id="L71">            com.setFont(com.getFont().deriveFont(Font.BOLD, 12));</span>
-<span class="fc bfc" id="L72" title="All 2 branches covered.">            if (alignment.containsKey(i1)) {</span>
-<span class="fc" id="L73">                setHorizontalAlignment(alignment.get(i1));</span>
+<span class="nc" id="L68">            Component com = super.getTableCellRendererComponent(jtable, o, bln, bln1, i, i1);</span>
+<span class="nc" id="L69">            com.setBackground(new Color(255, 255, 255));</span>
+<span class="nc" id="L70">            com.setForeground(new Color(30,30, 30));</span>
+<span class="nc" id="L71">            com.setFont(com.getFont().deriveFont(Font.BOLD, 12));</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">            if (alignment.containsKey(i1)) {</span>
+<span class="nc" id="L73">                setHorizontalAlignment(alignment.get(i1));</span>
             } else {
-<span class="fc" id="L75">                setHorizontalAlignment(JLabel.LEFT);</span>
+<span class="nc" id="L75">                setHorizontalAlignment(JLabel.LEFT);</span>
             }
-<span class="fc" id="L77">            return com;</span>
+<span class="nc" id="L77">            return com;</span>
         }
     }
 
-<span class="fc" id="L81">    private class TableDarkCell extends DefaultTableCellRenderer {</span>
+<span class="nc" id="L81">    private class TableDarkCell extends DefaultTableCellRenderer {</span>
 
-<span class="fc" id="L83">        private Map&lt;Integer, Integer&gt; alignment = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L83">        private Map&lt;Integer, Integer&gt; alignment = new HashMap&lt;&gt;();</span>
 
         public void setAlignment(int column, int align) {
-<span class="fc" id="L86">            alignment.put(column, align);</span>
-<span class="fc" id="L87">        }</span>
+<span class="nc" id="L86">            alignment.put(column, align);</span>
+<span class="nc" id="L87">        }</span>
 
         @Override
         public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int row, int column) {
-<span class="fc" id="L91">            Component com = super.getTableCellRendererComponent(jtable, o, bln, bln1, row, column);</span>
-<span class="pc bpc" id="L92" title="1 of 2 branches missed.">            if (isCellSelected(row, column)) {</span>
+<span class="nc" id="L91">            Component com = super.getTableCellRendererComponent(jtable, o, bln, bln1, row, column);</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">            if (isCellSelected(row, column)) {</span>
 <span class="nc bnc" id="L93" title="All 2 branches missed.">                if (row % 2 == 0) {</span>
 <span class="nc" id="L94">                    com.setBackground(new Color(33, 103, 153));</span>
                 } else {
 <span class="nc" id="L96">                    com.setBackground(new Color(29, 86, 127));</span>
                 }
             } else {
-<span class="fc bfc" id="L99" title="All 2 branches covered.">                if (row % 2 == 0) {</span>
-<span class="fc" id="L100">                    com.setBackground(new Color(250, 250, 250));</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">                if (row % 2 == 0) {</span>
+<span class="nc" id="L100">                    com.setBackground(new Color(250, 250, 250));</span>
                 } else {
-<span class="fc" id="L102">                    com.setBackground(new Color(230, 230, 230));</span>
+<span class="nc" id="L102">                    com.setBackground(new Color(230, 230, 230));</span>
                 }
             }
-<span class="fc" id="L105">            com.setForeground(new Color(30, 30, 30));</span>
-<span class="fc" id="L106">            setBorder(new EmptyBorder(0, 5, 0, 5));</span>
-<span class="fc bfc" id="L107" title="All 2 branches covered.">            if (alignment.containsKey(column)) {</span>
-<span class="fc" id="L108">                setHorizontalAlignment(alignment.get(column));</span>
+<span class="nc" id="L105">            com.setForeground(new Color(30, 30, 30));</span>
+<span class="nc" id="L106">            setBorder(new EmptyBorder(0, 5, 0, 5));</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">            if (alignment.containsKey(column)) {</span>
+<span class="nc" id="L108">                setHorizontalAlignment(alignment.get(column));</span>
             } else {
-<span class="fc" id="L110">                setHorizontalAlignment(JLabel.LEFT);</span>
+<span class="nc" id="L110">                setHorizontalAlignment(JLabel.LEFT);</span>
             }
-<span class="fc" id="L112">            return com;</span>
+<span class="nc" id="L112">            return com;</span>
         }
     }
 }

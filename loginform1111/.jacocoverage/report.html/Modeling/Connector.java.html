@@ -5,14 +5,14 @@ import java.sql.*;
 import javax.swing.*;
 
 
-<span class="fc" id="L8">public class Connector {</span>
-<span class="fc" id="L9">    private final String user=&quot;root&quot;;</span>
-<span class="fc" id="L10">    private final String pass=&quot;&quot;;</span>
-<span class="fc" id="L11">    private final String url=&quot;jdbc:mysql://localhost/pharmacy&quot;;</span>
+<span class="nc" id="L8">public class Connector {</span>
+<span class="nc" id="L9">    private final String user=&quot;root&quot;;</span>
+<span class="nc" id="L10">    private final String pass=&quot;&quot;;</span>
+<span class="nc" id="L11">    private final String url=&quot;jdbc:mysql://localhost/pharmacy&quot;;</span>
     public  Connection connect() 
     {
           try {
-<span class="fc" id="L15">               return DriverManager.getConnection(url, user, pass);</span>
+<span class="nc" id="L15">               return DriverManager.getConnection(url, user, pass);</span>
               }
 <span class="nc" id="L17">          catch (SQLException e) {</span>
    

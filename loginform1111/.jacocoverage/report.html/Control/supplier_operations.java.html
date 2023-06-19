@@ -56,7 +56,7 @@ import javax.swing.JOptionPane;
 <span class="pc" id="L56">                  throw new SQLException(&quot;check not right&quot;);</span>
 <span class="pc" id="L57">            } catch (SQLException ex) {</span>
 <span class="pc" id="L58">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L59">            }</span>
+            }
 <span class="nc" id="L60">        }</span>
 <span class="nc" id="L61">       return null;  </span>
     }
@@ -67,18 +67,18 @@ import javax.swing.JOptionPane;
 <span class="fc" id="L67">        ResultSet rs=DBOperation.getData(Query);</span>
 <span class="fc" id="L68">        ArrayList&lt;Object&gt; arr= new ArrayList();</span>
         try {
-<span class="fc bfc" id="L70" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            while(rs.next())</span>
             {
-<span class="fc" id="L72">              arr.add(new Suppliers_Model(rs.getInt(&quot;supplier_id&quot;),rs.getString(&quot;Company_name&quot;)));</span>
-<span class="fc" id="L73">              arr.add(new Products_Model(rs.getString(&quot;med_name&quot;)));</span>
-<span class="fc" id="L74">              arr.add(new supp_prod_rel_Model((rs.getString(&quot;date&quot;))));</span>
+<span class="nc" id="L72">              arr.add(new Suppliers_Model(rs.getInt(&quot;supplier_id&quot;),rs.getString(&quot;Company_name&quot;)));</span>
+<span class="nc" id="L73">              arr.add(new Products_Model(rs.getString(&quot;med_name&quot;)));</span>
+<span class="nc" id="L74">              arr.add(new supp_prod_rel_Model((rs.getString(&quot;date&quot;))));</span>
               
             }       
 <span class="nc" id="L77">        } catch (SQLException ex) {</span>
 <span class="nc" id="L78">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
 <span class="nc" id="L79">         arr=null;</span>
-<span class="fc" id="L80">        }</span>
-<span class="fc" id="L81">         return arr;    </span>
+<span class="nc" id="L80">        }</span>
+<span class="nc" id="L81">         return arr;    </span>
     }
 
       public  static ArrayList&lt;Object&gt; get_PRodSuppData()
@@ -88,33 +88,33 @@ import javax.swing.JOptionPane;
 <span class="fc" id="L88">          ArrayList&lt;Object&gt; arr= new ArrayList();</span>
 
         try {
-<span class="fc bfc" id="L91" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            while(rs.next())</span>
             {
-<span class="fc" id="L93">                arr.add(new Suppliers_Model(rs.getInt(&quot;supplier_id&quot;),rs.getString(&quot;Company_name&quot;)));</span>
-<span class="fc" id="L94">                arr.add(new Products_Model(rs.getString(&quot;med_name&quot;)));</span>
-<span class="fc" id="L95">                arr.add(new supp_prod_rel_Model((rs.getString(&quot;date&quot;))));</span>
+<span class="nc" id="L93">                arr.add(new Suppliers_Model(rs.getInt(&quot;supplier_id&quot;),rs.getString(&quot;Company_name&quot;)));</span>
+<span class="nc" id="L94">                arr.add(new Products_Model(rs.getString(&quot;med_name&quot;)));</span>
+<span class="nc" id="L95">                arr.add(new supp_prod_rel_Model((rs.getString(&quot;date&quot;))));</span>
             }
-<span class="fc" id="L97">           return arr; </span>
+<span class="nc" id="L97">           return arr; </span>
 <span class="nc" id="L98">        } catch (SQLException ex) {</span>
 <span class="nc" id="L99">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
         }
         finally{
-<span class="nc" id="L102">            try {</span>
-<span class="pc" id="L103">                rs.close();</span>
+<span class="fc" id="L102">            try {</span>
+<span class="nc" id="L103">                rs.close();</span>
 <span class="nc" id="L104">            } catch (SQLException ex) {</span>
 <span class="nc" id="L105">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="pc" id="L106">            }</span>
+<span class="nc" id="L106">            }</span>
 <span class="nc" id="L107">        }</span>
 <span class="nc" id="L108">       return null;</span>
         
     }
       public static void insertSupplier_prod_rel(String prod_name,int supp_id, int ph_id,String date)
       {
-<span class="fc" id="L113">          String Query=&quot;insert into supplier_prod_rel (prod_name,supp_id, ph_id,date) values ('&quot;+prod_name+&quot;','&quot;+supp_id+&quot;','&quot;+ph_id+&quot;','&quot;+date+&quot;') &quot;;</span>
+<span class="nc" id="L113">          String Query=&quot;insert into supplier_prod_rel (prod_name,supp_id, ph_id,date) values ('&quot;+prod_name+&quot;','&quot;+supp_id+&quot;','&quot;+ph_id+&quot;','&quot;+date+&quot;') &quot;;</span>
 //          String Query=&quot;insert into supplier_prod_rel values select prod_name,supp_id, phar_id from &quot;
-<span class="fc" id="L115">          DBOperation.setDataOrDelete(Query, &quot;added Successfully&quot;);</span>
+<span class="nc" id="L115">          DBOperation.setDataOrDelete(Query, &quot;added Successfully&quot;);</span>
           
-<span class="fc" id="L117">      }</span>
+<span class="nc" id="L117">      }</span>
       /* to check company name exist or not */
       public static ArrayList&lt;Object&gt; SearchToCheck(int Company_ID)
     {   
@@ -122,33 +122,33 @@ import javax.swing.JOptionPane;
 <span class="fc" id="L122">        ResultSet rs=DBOperation.getData(Query);</span>
 <span class="fc" id="L123">        ArrayList&lt;Object&gt; arr= new ArrayList();</span>
         try {
-<span class="fc bfc" id="L125" title="All 2 branches covered.">            if(!rs.isBeforeFirst())</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">            if(!rs.isBeforeFirst())</span>
             {
-<span class="fc" id="L127">                return null;</span>
+<span class="nc" id="L127">                return null;</span>
             }
-<span class="fc bfc" id="L129" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">            while(rs.next())</span>
             {
                 
-<span class="fc" id="L132">                arr.add(new Suppliers_Model(rs.getString(&quot;Company_name&quot;),</span>
-<span class="fc" id="L133">                      rs.getString(&quot;city&quot;),</span>
-<span class="fc" id="L134">                      rs.getString(&quot;region&quot;),</span>
-<span class="fc" id="L135">                      rs.getString(&quot;postal_code&quot;),</span>
-<span class="fc" id="L136">                      rs.getString(&quot;phone&quot;)));</span>
-<span class="fc" id="L137">                arr.add(new supp_prod_rel_Model(rs.getString(&quot;date&quot;)));</span>
+<span class="nc" id="L132">                arr.add(new Suppliers_Model(rs.getString(&quot;Company_name&quot;),</span>
+<span class="nc" id="L133">                      rs.getString(&quot;city&quot;),</span>
+<span class="nc" id="L134">                      rs.getString(&quot;region&quot;),</span>
+<span class="nc" id="L135">                      rs.getString(&quot;postal_code&quot;),</span>
+<span class="nc" id="L136">                      rs.getString(&quot;phone&quot;)));</span>
+<span class="nc" id="L137">                arr.add(new supp_prod_rel_Model(rs.getString(&quot;date&quot;)));</span>
                 
                 
             }   
             
-<span class="fc" id="L142">            return arr;</span>
+<span class="nc" id="L142">            return arr;</span>
 <span class="nc" id="L143">        } catch (SQLException ex) {</span>
 <span class="nc" id="L144">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
         }
         finally{
-<span class="nc" id="L147">            try {</span>
-<span class="pc" id="L148">                rs.close();</span>
+<span class="fc" id="L147">            try {</span>
+<span class="nc" id="L148">                rs.close();</span>
 <span class="nc" id="L149">            } catch (SQLException ex) {</span>
 <span class="nc" id="L150">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="pc" id="L151">            }</span>
+<span class="nc" id="L151">            }</span>
 <span class="nc" id="L152">        }</span>
 <span class="nc" id="L153">         return null;    </span>
     }

@@ -11,14 +11,14 @@ import javax.swing.JComponent;
 import javax.swing.JScrollBar;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
-<span class="fc" id="L14">public class ModernScrollBarUI extends BasicScrollBarUI {</span>
+<span class="nc" id="L14">public class ModernScrollBarUI extends BasicScrollBarUI {</span>
 
-<span class="fc" id="L16">    private final int THUMB_SIZE = 80;</span>
+<span class="nc" id="L16">    private final int THUMB_SIZE = 80;</span>
 
     @Override
     protected Dimension getMaximumThumbSize() {
-<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {</span>
-<span class="fc" id="L21">            return new Dimension(0, THUMB_SIZE);</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">        if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {</span>
+<span class="nc" id="L21">            return new Dimension(0, THUMB_SIZE);</span>
         } else {
 <span class="nc" id="L23">            return new Dimension(THUMB_SIZE, 0);</span>
         }
@@ -26,8 +26,8 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 
     @Override
     protected Dimension getMinimumThumbSize() {
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {</span>
-<span class="fc" id="L30">            return new Dimension(0, THUMB_SIZE);</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {</span>
+<span class="nc" id="L30">            return new Dimension(0, THUMB_SIZE);</span>
         } else {
 <span class="nc" id="L32">            return new Dimension(THUMB_SIZE, 0);</span>
         }
@@ -35,30 +35,30 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 
     @Override
     protected JButton createIncreaseButton(int i) {
-<span class="fc" id="L38">        return new ScrollBarButton();</span>
+<span class="nc" id="L38">        return new ScrollBarButton();</span>
     }
 
     @Override
     protected JButton createDecreaseButton(int i) {
-<span class="fc" id="L43">        return new ScrollBarButton();</span>
+<span class="nc" id="L43">        return new ScrollBarButton();</span>
     }
 
     @Override
     protected void paintTrack(Graphics grphcs, JComponent jc, Rectangle rctngl) {
-<span class="fc" id="L48">        Graphics2D g2 = (Graphics2D) grphcs;</span>
-<span class="fc" id="L49">        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span>
-<span class="fc" id="L50">        int orientation = scrollbar.getOrientation();</span>
+<span class="nc" id="L48">        Graphics2D g2 = (Graphics2D) grphcs;</span>
+<span class="nc" id="L49">        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span>
+<span class="nc" id="L50">        int orientation = scrollbar.getOrientation();</span>
         int size;
         int x;
         int y;
         int width;
         int height;
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if (orientation == JScrollBar.VERTICAL) {</span>
-<span class="fc" id="L57">            size = rctngl.width / 2;</span>
-<span class="fc" id="L58">            x = rctngl.x + ((rctngl.width - size) / 2);</span>
-<span class="fc" id="L59">            y = rctngl.y;</span>
-<span class="fc" id="L60">            width = size;</span>
-<span class="fc" id="L61">            height = rctngl.height;</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if (orientation == JScrollBar.VERTICAL) {</span>
+<span class="nc" id="L57">            size = rctngl.width / 2;</span>
+<span class="nc" id="L58">            x = rctngl.x + ((rctngl.width - size) / 2);</span>
+<span class="nc" id="L59">            y = rctngl.y;</span>
+<span class="nc" id="L60">            width = size;</span>
+<span class="nc" id="L61">            height = rctngl.height;</span>
         } else {
 <span class="nc" id="L63">            size = rctngl.height / 2;</span>
 <span class="nc" id="L64">            y = rctngl.y + ((rctngl.height - size) / 2);</span>
@@ -66,34 +66,34 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 <span class="nc" id="L66">            width = rctngl.width;</span>
 <span class="nc" id="L67">            height = size;</span>
         }
-<span class="fc" id="L69">        g2.setColor(scrollbar.getBackground());</span>
-<span class="fc" id="L70">        g2.fillRect(x, y, width, height);</span>
-<span class="fc" id="L71">    }</span>
+<span class="nc" id="L69">        g2.setColor(scrollbar.getBackground());</span>
+<span class="nc" id="L70">        g2.fillRect(x, y, width, height);</span>
+<span class="nc" id="L71">    }</span>
 
     @Override
     protected void paintThumb(Graphics grphcs, JComponent jc, Rectangle rctngl) {
-<span class="fc" id="L75">        Graphics2D g2 = (Graphics2D) grphcs;</span>
-<span class="fc" id="L76">        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span>
-<span class="fc" id="L77">        int x = rctngl.x;</span>
-<span class="fc" id="L78">        int y = rctngl.y;</span>
-<span class="fc" id="L79">        int width = rctngl.width;</span>
-<span class="fc" id="L80">        int height = rctngl.height;</span>
-<span class="pc bpc" id="L81" title="1 of 2 branches missed.">        if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {</span>
-<span class="fc" id="L82">            y += 8;</span>
-<span class="fc" id="L83">            height -= 16;</span>
+<span class="nc" id="L75">        Graphics2D g2 = (Graphics2D) grphcs;</span>
+<span class="nc" id="L76">        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span>
+<span class="nc" id="L77">        int x = rctngl.x;</span>
+<span class="nc" id="L78">        int y = rctngl.y;</span>
+<span class="nc" id="L79">        int width = rctngl.width;</span>
+<span class="nc" id="L80">        int height = rctngl.height;</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {</span>
+<span class="nc" id="L82">            y += 8;</span>
+<span class="nc" id="L83">            height -= 16;</span>
         } else {
 <span class="nc" id="L85">            x += 8;</span>
 <span class="nc" id="L86">            width -= 16;</span>
         }
-<span class="fc" id="L88">        g2.setColor(scrollbar.getForeground());</span>
-<span class="fc" id="L89">        g2.fillRoundRect(x, y, width, height, 10, 10);</span>
-<span class="fc" id="L90">    }</span>
+<span class="nc" id="L88">        g2.setColor(scrollbar.getForeground());</span>
+<span class="nc" id="L89">        g2.fillRoundRect(x, y, width, height, 10, 10);</span>
+<span class="nc" id="L90">    }</span>
 
     private class ScrollBarButton extends JButton {
 
-<span class="fc" id="L94">        public ScrollBarButton() {</span>
-<span class="fc" id="L95">            setBorder(BorderFactory.createEmptyBorder());</span>
-<span class="fc" id="L96">        }</span>
+<span class="nc" id="L94">        public ScrollBarButton() {</span>
+<span class="nc" id="L95">            setBorder(BorderFactory.createEmptyBorder());</span>
+<span class="nc" id="L96">        }</span>
 
         @Override
         public void paint(Graphics grphcs) {

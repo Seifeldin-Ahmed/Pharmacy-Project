@@ -69,9 +69,9 @@ import javax.swing.JOptionPane;
 <span class="fc" id="L69">        String Query=&quot;select *from pharmacist where id='&quot;+id+&quot;'&quot;;</span>
 <span class="fc" id="L70">        ResultSet rs=DBOperation.getData(Query);</span>
         try {
-<span class="fc bfc" id="L72" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">            while(rs.next())</span>
             {
-<span class="fc" id="L74">                obj= new Pharmacist_Model(rs.getInt(&quot;id&quot;),rs.getString(&quot;hired_date&quot;),rs.getString(&quot;firstname&quot;),rs.getString(&quot;lastname&quot;),rs.getString(&quot;pharmacist_gender&quot;),rs.getString(&quot;phonenumber&quot;),rs.getString(&quot;email&quot;),rs.getString(&quot;password&quot;),rs.getInt(&quot;salary&quot;),rs.getInt(&quot;age&quot;));  </span>
+<span class="nc" id="L74">                obj= new Pharmacist_Model(rs.getInt(&quot;id&quot;),rs.getString(&quot;hired_date&quot;),rs.getString(&quot;firstname&quot;),rs.getString(&quot;lastname&quot;),rs.getString(&quot;pharmacist_gender&quot;),rs.getString(&quot;phonenumber&quot;),rs.getString(&quot;email&quot;),rs.getString(&quot;password&quot;),rs.getInt(&quot;salary&quot;),rs.getInt(&quot;age&quot;));  </span>
             }       
 <span class="nc" id="L76">        } catch (SQLException ex) {</span>
 <span class="nc" id="L77">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
