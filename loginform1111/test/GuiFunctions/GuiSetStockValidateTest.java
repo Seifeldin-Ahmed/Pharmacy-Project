@@ -43,6 +43,7 @@ public class GuiSetStockValidateTest {
     /**
      * Test of SetStock_validateFields method, of class GuiSetStockValidate.
      */
+    
     @Test
     public void testSetStock_validateFields() {
          System.out.println("Empty fields");
@@ -81,7 +82,7 @@ public class GuiSetStockValidateTest {
     }
     @Test
     public void testSetStock4_validateFields() {
-         System.out.println("not Empty fields");
+         System.out.println(" Empty fields");
         String prod_name = "alvantern";
         String pri = "70";
         String quan = "50";
@@ -93,7 +94,7 @@ public class GuiSetStockValidateTest {
     }
     @Test
     public void testSetStock5_validateFields() {
-         System.out.println("not Empty fields");
+         System.out.println(" Empty fields");
         String prod_name = "alvantern";
         String pri = "";
         String quan = "";
@@ -103,7 +104,143 @@ public class GuiSetStockValidateTest {
         boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
         assertEquals(expResult, result);
     }
-   
+    @Test
+    public void testSetStock6_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "";
+        String quan = "20";
+        String ex_date = "";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock7_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "12";
+        String quan = "";
+        String ex_date = "";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock8_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "";
+        String quan = "";
+        String ex_date = "12/10/2025";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock9_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "alvantern";
+        String pri = "15";
+        String quan = "";
+        String ex_date = "12/12/2029";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock10_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "alvantern";
+        String pri = "";
+        String quan = "20";
+        String ex_date = "12/12/2029";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock11_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "25";
+        String quan = "20";
+        String ex_date = "12/12/2029";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock12_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "25";
+        String quan = "20";
+        String ex_date = "";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock13_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "25";
+        String quan = "";
+        String ex_date = "12/12/2029";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock14_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "";
+        String pri = "";
+        String quan = "20";
+        String ex_date = "12/12/2029";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock15_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "pandol";
+        String pri = "";
+        String quan = "20";
+        String ex_date = "";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetStock16_validateFields() {
+         System.out.println(" Empty fields");
+        String prod_name = "pandol";
+        String pri = "";
+        String quan = "";
+        String ex_date = "12/12/2029";
+        GuiSetStockValidate instance = new GuiSetStockValidate();
+        boolean expResult = false;
+        boolean result = instance.SetStock_validateFields(prod_name, pri, quan, ex_date);
+        assertEquals(expResult, result);
+    }
+    
+     /**
+     * Test of SetStock Vaildate_ExpiredDate method, of class GuiSetStockValidate.
+     */
+    
     @Test
     public void testVaildate_ExpiredDate() {
         System.out.println("vaildate_ExpiredDate");
@@ -169,6 +306,9 @@ public class GuiSetStockValidateTest {
         assertEquals(expResult, result);
       
     }
+     /**
+     * Test of SetStock IsExpired method, of class GuiSetStockValidate.
+     */
     @Test
     public void testIsExpired() {
         System.out.println("IsnotExpired");

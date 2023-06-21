@@ -10,6 +10,8 @@ package loginform;
  */
 public class phar_rond extends javax.swing.JFrame {
 
+    private Orders order_object;
+
     /**
      * Creates new form phar_rond
      */
@@ -144,7 +146,11 @@ public class phar_rond extends javax.swing.JFrame {
     }//GEN-LAST:event_customersMouseClicked
 
     private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
-        // TODO add your handling code here:
+        this.dispose();
+        Orders gg=new Orders();
+        this.order_object=gg;
+        gg.setVisible(true);
+        gg.show_table();
     }//GEN-LAST:event_ordersMouseClicked
 
     private void productsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productsMouseClicked

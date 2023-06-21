@@ -73,10 +73,12 @@ public class GuiSetStockValidate {
         if (YearNow > YearOld) // Expired
         {
             expired = true;
-        } else if (YearNow == YearOld) {
+        } 
+        else if (YearNow == YearOld) {
             if (MonthNow > MonthOld) {
                 expired = true;
-            } else if (MonthNow == MonthOld) {
+            } 
+            else if (MonthNow == MonthOld) {
                 if (DayNow >= DayOld) {
                     expired = true;
                 }
@@ -84,8 +86,6 @@ public class GuiSetStockValidate {
         }
         return expired;
     }
-      
-      
 }
 
 

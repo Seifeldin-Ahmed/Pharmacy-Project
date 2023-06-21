@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
 <span class="fc" id="L24">        String price = pri;</span>
 <span class="fc" id="L25">        String quantity = quan;</span>
 <span class="fc" id="L26">        String expired_date = ex_date;</span>
-<span class="pc bpc" id="L27" title="2 of 8 branches missed.">        return   !expired_date.equals(&quot;&quot;) &amp;&amp; !quantity.equals(&quot;&quot;) &amp;&amp; !price.equals(&quot;&quot;) &amp;&amp; !med_name.equals(&quot;&quot;);</span>
+<span class="fc bfc" id="L27" title="All 8 branches covered.">        return   !expired_date.equals(&quot;&quot;) &amp;&amp; !quantity.equals(&quot;&quot;) &amp;&amp; !price.equals(&quot;&quot;) &amp;&amp; !med_name.equals(&quot;&quot;);</span>
         }
         
         public boolean vaildate_ExpiredDate(Products_Model old_Product,Products_Model new_Product)
@@ -73,19 +73,19 @@ import java.util.StringTokenizer;
 <span class="fc bfc" id="L73" title="All 2 branches covered.">        if (YearNow &gt; YearOld) // Expired</span>
         {
 <span class="fc" id="L75">            expired = true;</span>
-<span class="fc bfc" id="L76" title="All 2 branches covered.">        } else if (YearNow == YearOld) {</span>
-<span class="fc bfc" id="L77" title="All 2 branches covered.">            if (MonthNow &gt; MonthOld) {</span>
-<span class="fc" id="L78">                expired = true;</span>
-<span class="fc bfc" id="L79" title="All 2 branches covered.">            } else if (MonthNow == MonthOld) {</span>
-<span class="fc bfc" id="L80" title="All 2 branches covered.">                if (DayNow &gt;= DayOld) {</span>
-<span class="fc" id="L81">                    expired = true;</span>
+        } 
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        else if (YearNow == YearOld) {</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">            if (MonthNow &gt; MonthOld) {</span>
+<span class="fc" id="L79">                expired = true;</span>
+            } 
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            else if (MonthNow == MonthOld) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">                if (DayNow &gt;= DayOld) {</span>
+<span class="fc" id="L83">                    expired = true;</span>
                 }
             }
         }
-<span class="fc" id="L85">        return expired;</span>
+<span class="fc" id="L87">        return expired;</span>
     }
-      
-      
 }
 
 

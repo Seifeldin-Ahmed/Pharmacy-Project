@@ -108,12 +108,7 @@ public class Pharmacist_operationsTest {
         //  assertEquals(Hired_date,pharmasist.getHired_date() );
 
     }
-    @Test
-    public void testGet_pharmacistData() {
-         ArrayList<Pharmacist_Model> expResult =null;
-        ArrayList<Pharmacist_Model> result = get_pharmacistData();
-        assertNotEquals(expResult, result);
-    }
+   
 @Test
     public void testGet2_pharmacistData() {
          ArrayList<Pharmacist_Model> expectedList = new ArrayList<>();
@@ -183,6 +178,11 @@ public void testSearch2_Pharmacist() {
         assertNotNull( result); //if it  exist
     }
     
-   
+    @Test
+    public void testGet_pharmacistData() {
+         ArrayList<Pharmacist_Model> expResult =null;
+        ArrayList<Pharmacist_Model> result = get_pharmacistData();
+        assertNotEquals(expResult, result);
+    }
     
 }

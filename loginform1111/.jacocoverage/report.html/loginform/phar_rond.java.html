@@ -10,12 +10,14 @@ package loginform;
  */
 public class phar_rond extends javax.swing.JFrame {
 
+    private Orders order_object;
+
     /**
      * Creates new form phar_rond
      */
-<span class="nc" id="L16">    public phar_rond() {</span>
-<span class="nc" id="L17">        initComponents();</span>
-<span class="nc" id="L18">    }</span>
+<span class="nc" id="L18">    public phar_rond() {</span>
+<span class="nc" id="L19">        initComponents();</span>
+<span class="nc" id="L20">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,133 +28,137 @@ public class phar_rond extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L29">        jPanel1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L30">        jLabel1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L31">        jLabel2 = new javax.swing.JLabel();</span>
-<span class="nc" id="L32">        jLabel3 = new javax.swing.JLabel();</span>
-<span class="nc" id="L33">        jPanel5 = new javax.swing.JPanel();</span>
-<span class="nc" id="L34">        jLabel8 = new javax.swing.JLabel();</span>
-<span class="nc" id="L35">        orders = new javax.swing.JLabel();</span>
-<span class="nc" id="L36">        jPanel6 = new javax.swing.JPanel();</span>
-<span class="nc" id="L37">        products = new javax.swing.JLabel();</span>
-<span class="nc" id="L38">        jLabel4 = new javax.swing.JLabel();</span>
-<span class="nc" id="L39">        jPanel4 = new javax.swing.JPanel();</span>
-<span class="nc" id="L40">        jLabel5 = new javax.swing.JLabel();</span>
-<span class="nc" id="L41">        customers = new javax.swing.JLabel();</span>
+<span class="nc" id="L31">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L32">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L33">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L34">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L35">        jPanel5 = new javax.swing.JPanel();</span>
+<span class="nc" id="L36">        jLabel8 = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        orders = new javax.swing.JLabel();</span>
+<span class="nc" id="L38">        jPanel6 = new javax.swing.JPanel();</span>
+<span class="nc" id="L39">        products = new javax.swing.JLabel();</span>
+<span class="nc" id="L40">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L41">        jPanel4 = new javax.swing.JPanel();</span>
+<span class="nc" id="L42">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L43">        customers = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L43">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L45">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
 
-<span class="nc" id="L45">        jPanel1.setBackground(new java.awt.Color(6, 107, 138));</span>
-<span class="nc" id="L46">        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L47">        jPanel1.setBackground(new java.awt.Color(6, 107, 138));</span>
+<span class="nc" id="L48">        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L48">        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L49">        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/online-pharmacy (1).png&quot;))); // NOI18N</span>
-<span class="nc" id="L50">        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 140));</span>
+<span class="nc" id="L50">        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L51">        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/online-pharmacy (1).png&quot;))); // NOI18N</span>
+<span class="nc" id="L52">        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 140));</span>
 
-<span class="nc" id="L52">        jLabel2.setFont(new java.awt.Font(&quot;Baskerville Old Face&quot;, 1, 37)); // NOI18N</span>
-<span class="nc" id="L53">        jLabel2.setForeground(new java.awt.Color(255, 228, 207));</span>
-<span class="nc" id="L54">        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L55">        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/text-1670628895593.png&quot;))); // NOI18N</span>
-<span class="nc" id="L56">        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 750, 90));</span>
+<span class="nc" id="L54">        jLabel2.setFont(new java.awt.Font(&quot;Baskerville Old Face&quot;, 1, 37)); // NOI18N</span>
+<span class="nc" id="L55">        jLabel2.setForeground(new java.awt.Color(255, 228, 207));</span>
+<span class="nc" id="L56">        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L57">        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/text-1670628895593.png&quot;))); // NOI18N</span>
+<span class="nc" id="L58">        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 750, 90));</span>
 
-<span class="nc" id="L58">        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L59">        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/pharmacy (12).png&quot;))); // NOI18N</span>
-<span class="nc" id="L60">        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 0, 40, 60));</span>
+<span class="nc" id="L60">        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L61">        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/pharmacy (12).png&quot;))); // NOI18N</span>
+<span class="nc" id="L62">        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 0, 40, 60));</span>
 
-<span class="nc" id="L62">        jPanel5.setBackground(new java.awt.Color(255, 255, 255,80));</span>
-<span class="nc" id="L63">        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L64">        jPanel5.setBackground(new java.awt.Color(255, 255, 255,80));</span>
+<span class="nc" id="L65">        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L65">        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L66">        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/orders_1.jpg&quot;))); // NOI18N</span>
-<span class="nc" id="L67">        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 250, 250));</span>
+<span class="nc" id="L67">        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L68">        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/orders_1.jpg&quot;))); // NOI18N</span>
+<span class="nc" id="L69">        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 250, 250));</span>
 
-<span class="nc" id="L69">        orders.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 14)); // NOI18N</span>
-<span class="nc" id="L70">        orders.setForeground(new java.awt.Color(255, 228, 207));</span>
-<span class="nc" id="L71">        orders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L72">        orders.setText(&quot;Orders&quot;);</span>
-<span class="nc" id="L73">        orders.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L71">        orders.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 14)); // NOI18N</span>
+<span class="nc" id="L72">        orders.setForeground(new java.awt.Color(255, 228, 207));</span>
+<span class="nc" id="L73">        orders.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L74">        orders.setText(&quot;Orders&quot;);</span>
+<span class="nc" id="L75">        orders.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L75">                ordersMouseClicked(evt);</span>
-<span class="nc" id="L76">            }</span>
+<span class="nc" id="L77">                ordersMouseClicked(evt);</span>
+<span class="nc" id="L78">            }</span>
         });
-<span class="nc" id="L78">        jPanel5.add(orders, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 250, 30));</span>
+<span class="nc" id="L80">        jPanel5.add(orders, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 250, 30));</span>
 
-<span class="nc" id="L80">        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 270, 250));</span>
+<span class="nc" id="L82">        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 270, 250));</span>
 
-<span class="nc" id="L82">        jPanel6.setBackground(new java.awt.Color(255, 255, 255,80));</span>
-<span class="nc" id="L83">        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L84">        jPanel6.setBackground(new java.awt.Color(255, 255, 255,80));</span>
+<span class="nc" id="L85">        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L85">        products.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 14)); // NOI18N</span>
-<span class="nc" id="L86">        products.setForeground(new java.awt.Color(255, 228, 207));</span>
-<span class="nc" id="L87">        products.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L88">        products.setText(&quot;Products&quot;);</span>
-<span class="nc" id="L89">        products.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L87">        products.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 14)); // NOI18N</span>
+<span class="nc" id="L88">        products.setForeground(new java.awt.Color(255, 228, 207));</span>
+<span class="nc" id="L89">        products.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L90">        products.setText(&quot;Products&quot;);</span>
+<span class="nc" id="L91">        products.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L91">                productsMouseClicked(evt);</span>
-<span class="nc" id="L92">            }</span>
+<span class="nc" id="L93">                productsMouseClicked(evt);</span>
+<span class="nc" id="L94">            }</span>
         });
-<span class="nc" id="L94">        jPanel6.add(products, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 260, 30));</span>
+<span class="nc" id="L96">        jPanel6.add(products, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 260, 30));</span>
 
-<span class="nc" id="L96">        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/sales2.png&quot;))); // NOI18N</span>
-<span class="nc" id="L97">        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 260, -1));</span>
+<span class="nc" id="L98">        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/sales2.png&quot;))); // NOI18N</span>
+<span class="nc" id="L99">        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 260, -1));</span>
 
-<span class="nc" id="L99">        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 280, 250));</span>
+<span class="nc" id="L101">        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 280, 250));</span>
 
-<span class="nc" id="L101">        jPanel4.setBackground(new java.awt.Color(255, 255, 255,80));</span>
-<span class="nc" id="L102">        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L103">        jPanel4.setBackground(new java.awt.Color(255, 255, 255,80));</span>
+<span class="nc" id="L104">        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L104">        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/eree (1).jpg&quot;))); // NOI18N</span>
-<span class="nc" id="L105">        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 190));</span>
+<span class="nc" id="L106">        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/icon/eree (1).jpg&quot;))); // NOI18N</span>
+<span class="nc" id="L107">        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 190));</span>
 
-<span class="nc" id="L107">        customers.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 14)); // NOI18N</span>
-<span class="nc" id="L108">        customers.setForeground(new java.awt.Color(255, 228, 207));</span>
-<span class="nc" id="L109">        customers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
-<span class="nc" id="L110">        customers.setText(&quot;Customers&quot;);</span>
-<span class="nc" id="L111">        customers.setPreferredSize(new java.awt.Dimension(75, 20));</span>
-<span class="nc" id="L112">        customers.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L109">        customers.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 1, 14)); // NOI18N</span>
+<span class="nc" id="L110">        customers.setForeground(new java.awt.Color(255, 228, 207));</span>
+<span class="nc" id="L111">        customers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L112">        customers.setText(&quot;Customers&quot;);</span>
+<span class="nc" id="L113">        customers.setPreferredSize(new java.awt.Dimension(75, 20));</span>
+<span class="nc" id="L114">        customers.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L114">                customersMouseClicked(evt);</span>
-<span class="nc" id="L115">            }</span>
+<span class="nc" id="L116">                customersMouseClicked(evt);</span>
+<span class="nc" id="L117">            }</span>
         });
-<span class="nc" id="L117">        jPanel4.add(customers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 270, 30));</span>
+<span class="nc" id="L119">        jPanel4.add(customers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 270, 30));</span>
 
-<span class="nc" id="L119">        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 290, 250));</span>
+<span class="nc" id="L121">        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 290, 250));</span>
 
-<span class="nc" id="L121">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L122">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L123">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L124">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L125">            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L123">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L124">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L125">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L126">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L127">            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
         );
-<span class="nc" id="L127">        layout.setVerticalGroup(</span>
-<span class="nc" id="L128">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L129">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L130">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L131">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L129">        layout.setVerticalGroup(</span>
+<span class="nc" id="L130">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L131">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L132">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L133">                .addGap(0, 0, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L134">        pack();</span>
-<span class="nc" id="L135">        setLocationRelativeTo(null);</span>
-<span class="nc" id="L136">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L136">        pack();</span>
+<span class="nc" id="L137">        setLocationRelativeTo(null);</span>
+<span class="nc" id="L138">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void customersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customersMouseClicked
-<span class="nc" id="L139">        this.dispose();</span>
-<span class="nc" id="L140">        Customers gg=new Customers();</span>
-<span class="nc" id="L141">        gg.setVisible(true);</span>
-<span class="nc" id="L142">        gg.show_table();</span>
+<span class="nc" id="L141">        this.dispose();</span>
+<span class="nc" id="L142">        Customers gg=new Customers();</span>
+<span class="nc" id="L143">        gg.setVisible(true);</span>
+<span class="nc" id="L144">        gg.show_table();</span>
 
-<span class="nc" id="L144">    }//GEN-LAST:event_customersMouseClicked</span>
+<span class="nc" id="L146">    }//GEN-LAST:event_customersMouseClicked</span>
 
     private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
-        // TODO add your handling code here:
-<span class="nc" id="L148">    }//GEN-LAST:event_ordersMouseClicked</span>
+<span class="nc" id="L149">        this.dispose();</span>
+<span class="nc" id="L150">        Orders gg=new Orders();</span>
+<span class="nc" id="L151">        this.order_object=gg;</span>
+<span class="nc" id="L152">        gg.setVisible(true);</span>
+<span class="nc" id="L153">        gg.show_table();</span>
+<span class="nc" id="L154">    }//GEN-LAST:event_ordersMouseClicked</span>
 
     private void productsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productsMouseClicked
-<span class="nc" id="L151">        products ob=new products();</span>
-<span class="nc" id="L152">        ob.setVisible(true);</span>
-<span class="nc" id="L153">        ob.show_table();</span>
-<span class="nc" id="L154">        this.dispose();</span>
-<span class="nc" id="L155">    }//GEN-LAST:event_productsMouseClicked</span>
+<span class="nc" id="L157">        products ob=new products();</span>
+<span class="nc" id="L158">        ob.setVisible(true);</span>
+<span class="nc" id="L159">        ob.show_table();</span>
+<span class="nc" id="L160">        this.dispose();</span>
+<span class="nc" id="L161">    }//GEN-LAST:event_productsMouseClicked</span>
 
     /**
      * @param args the command line arguments
@@ -164,30 +170,30 @@ public class phar_rond extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L167" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L168" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L169">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L170">                    break;</span>
+<span class="nc bnc" id="L173" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L174" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L175">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L176">                    break;</span>
                 }
             }
-<span class="nc" id="L173">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L174">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L175">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L176">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L177">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L178">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L179">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L179">        } catch (ClassNotFoundException ex) {</span>
 <span class="nc" id="L180">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L181">        }</span>
+<span class="nc" id="L181">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L182">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L183">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L184">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L185">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L186">            java.util.logging.Logger.getLogger(phar_rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L187">        }</span>
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L185">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L191">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L187">                new phar_rond().setVisible(true);</span>
-<span class="nc" id="L188">            }</span>
+<span class="nc" id="L193">                new phar_rond().setVisible(true);</span>
+<span class="nc" id="L194">            }</span>
         });
-<span class="nc" id="L190">    }</span>
+<span class="nc" id="L196">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel customers;

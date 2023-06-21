@@ -14,6 +14,7 @@ import static Control.Products_Operations.get_ProductsData;
 import static Control.Products_Operations.insert_ProductData;
 import Modeling.DBOperation;
 import Modeling.Products_Model;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -79,7 +80,7 @@ public class Products_OperationsTest {
     public void testGet_get_Productdata() {
        ArrayList<Products_Model> expectedList = new ArrayList<>();
    Products_Model product1 =new Products_Model ("move", 70,"1/8/2030",202,"Other","hh"); 
-   Products_Model product2 =new Products_Model ("namnam", 800,"11/02/2045",60,"tablet ","sddd"); 
+   Products_Model product2 =new Products_Model ("namnam", 800,"11/02/2045",168,"tablet ","sddd"); 
    Products_Model product3 =new Products_Model ("paan", 100,"15/2/2029",19,"relievers","A pain reliever that helps to relieve headaches, muscle aches, and other pains."); 
    Products_Model product4 =new Products_Model ("pandol", 102,"15/10/2028",20,"Tablet","ggg"); 
    Products_Model product5 =new Products_Model ("pann", 500,"1/8/2038",300,"tables ","sddd"); 
@@ -155,7 +156,7 @@ assertEquals(expectedModel.getDescription(), actualModel.getDescription());
          assertEquals(quantity, product.getQuantity());
   }
   @Test
-  public void testSearch_Product() {
+  public void testSearch_Product()  {
     // Arrange
     String med_name = "Adviffla";
     Products_Model result = Products_Operations.Search_Product(med_name);
@@ -163,7 +164,7 @@ assertEquals(expectedModel.getDescription(), actualModel.getDescription());
   }
 
   @Test
-  public void testSearch2_Product() {
+  public void testSearch2_Product()  {
     // Arrange
     String med_name = "pann";
   //  ArrayList<Products_Model> expResult = null;
